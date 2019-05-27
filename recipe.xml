@@ -1,0 +1,89 @@
+<xml 
+  xmlns="http://www.w3.org/1999/xhtml">
+  <block type="onfirstboot" id="onfirstboot" x="324" y="59">
+    <next>
+      <block type="changesshkeys" id="V(/qe#,h/~/)*KqF6N^g">
+        <next>
+          <block type="wifisetup" id="tVbKlBY4g.WNuF-.l4`e">
+            <field name="1">404NotFound</field>
+            <field name="2">Pkmoed@160</field>
+            <field name="3">WPA/WPA2</field>
+            <field name="4">US</field>
+            <next>
+              <block type="sethostname" id="6;+-y`d|pK#7H1A@)`wg">
+                <field name="1">pi-sdr</field>
+                <next>
+                  <block type="changepass" id="bZmMS?u|=y5W/;Z@3^R2">
+                    <field name="1">sdr</field>
+                    <next>
+                      <block type="runcommand" id="?+H^sbM!MyhpLNgkevR=">
+                        <field name="1">cd</field>
+                        <field name="2">root</field>
+                        <next>
+                          <block type="runcommand" id="ZnTF:JV`_O+/+WuWs)%n">
+                            <field name="1">apt update &amp;&amp; apt upgrade</field>
+                            <field name="2">root</field>
+                            <next>
+                              <block type="runcommand" id="v4-XLilGg]tE{dl5/yKP">
+                                <field name="1">apt install rtl-sdr</field>
+                                <field name="2">root</field>
+                                <next>
+                                  <block type="runcommand" id=",n-Np,3O]A01t=Lj{e~E">
+                                    <field name="1">git clone https://github.com/12mta/web-sdr-for-pi.git</field>
+                                    <field name="2">root</field>
+                                    <next>
+                                      <block type="runcommand" id="1*^*R9Fg63ZQ8hB:ZM9g">
+                                        <field name="1">cd 'web-sdr-for-pi'</field>
+                                        <field name="2">root</field>
+                                        <next>
+                                          <block type="runcommand" id="O+NlGg,)9`IJORR8{6fo">
+                                            <field name="1">chmod +x install.sh</field>
+                                            <field name="2">root</field>
+                                            <next>
+                                              <block type="runcommand" id="hI,J]#UpeKOe|~N9Y/*d">
+                                                <field name="1">cp install.sh /root/</field>
+                                                <field name="2">root</field>
+                                                <next>
+                                                  <block type="runcommand" id="#xaabW%nxkK[EmNC+),k">
+                                                    <field name="1">./install.sh</field>
+                                                    <field name="2">root</field>
+                                                    <next>
+                                                      <block type="reboot" id="(^WjHw4HjLm=4llQ?}LM"></block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+  <block type="onboot" id="~Z])h=18ozEz25u.Fwxv" x="857" y="58">
+    <next>
+      <block type="runpython" id="}8[Bi/gi.-6N]I4nbO:n">
+        <field name="1">/root/opwebrx/webrx.py</field>
+        <field name="2">root</field>
+      </block>
+    </next>
+  </block>
+  <firstboot 
+    xmlns="">0
+  </firstboot>
+</xml>
